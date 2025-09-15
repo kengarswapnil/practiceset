@@ -1,0 +1,21 @@
+class Solution {
+    public boolean checkIfPangram(String sentence) {
+       boolean [] aphabet = new boolean[26];
+
+       for(int i=0;i<sentence.length();i++){
+        char ch  = sentence.charAt(i);
+        if(ch >= 'a' && ch <= 'z'){
+            aphabet[ch - 'a']= true;
+        }
+       }
+    
+       boolean ispangram =true;
+       for(boolean  str : aphabet){
+          if(!str){
+            return false;
+          }
+       }
+
+       return true;
+    }
+}
