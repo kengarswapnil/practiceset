@@ -1,0 +1,28 @@
+class Main {
+    public static int sqrt(int x ){
+        if(x < 2) return x;
+        
+        int beg = 1,end = x / 2,res = 0;
+        
+        while(beg <= end ){
+            int mid = beg + (end - beg)/2;
+            long sq = (long) mid * mid;
+            
+            if(sq == x){
+                return mid;
+            }else if(sq < x){
+                res = mid;
+                beg = mid + 1;
+            }else{
+                end = mid -1 ;
+            }
+           
+        }
+         return res;
+    }
+    public static void main(String[] args) {
+        int x = 24;
+        System.out.println(sqrt(x));
+        
+    }
+}
