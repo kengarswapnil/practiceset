@@ -1,0 +1,48 @@
+class Solution {
+    public int[] sortArrayByParityII(int[] nums) {
+    //   ArrayList<Integer> even = new ArrayList<>();
+    //   ArrayList<Integer> odd = new ArrayList<>();
+
+    //   for(int num:nums){
+    //     if(num % 2 == 0){
+    //         even.add(0,num);
+    //     }else{
+    //         odd.add(num);
+    //     }
+    //   }
+
+    //   // Step 2: Merge even and odd alternatively
+    //     ArrayList<Integer> res = new ArrayList<>();
+    //     for (int i = 0; i < nums.length / 2; i++) {
+    //         res.add(even.get(i)); // even index
+    //         res.add(odd.get(i));  // odd index
+    //     }
+
+
+
+
+    //    int[] result = new int[res.size()];
+    //     for (int i = 0; i < res.size(); i++) {
+    //         result[i] = res.get(i);
+    //     }
+        
+    //     return result;
+
+
+    int res[] = new int[nums.length];
+    int even =0;
+    int odd = 1;
+    for(int num:nums){
+        if(num %2 == 0){
+          res[even] = num;
+          even +=2 ;
+        }else{
+          res[odd] = num;
+          odd += 2;
+        }
+     
+    }
+
+    return res;
+    }
+}
