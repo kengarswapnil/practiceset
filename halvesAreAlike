@@ -1,0 +1,31 @@
+class Solution {
+    public boolean halvesAreAlike(String s) {
+        String vowels = "aeiouAEIOU";
+        String first =  "";
+        String second = "";
+        for(int i=0;i<s.length();i++){
+            if(i < s.length()/2){
+               first += s.charAt(i);
+            }else{
+                second += s.charAt(i);
+            }
+        }
+
+        int count1 = 0 ;
+        int count2 = 0;
+
+        for(int i=0;i<first.length();i++){
+            if(vowels.indexOf(first.charAt(i)) != -1 ){
+                count1++;
+            }
+        }
+
+         for(int i=0;i<second.length();i++){
+            if(vowels.indexOf(second.charAt(i)) != -1){
+                count2++;
+            }
+        }
+
+        return count1 == count2;
+    }
+}
